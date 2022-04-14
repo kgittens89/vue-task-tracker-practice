@@ -1,5 +1,8 @@
 # task-tracker
 
+## Code from Vue JS Crash Course 
+ > https://www.youtube.com/watch?v=qZXt1Aom3Cs
+
 ## Project setup
 ```
 npm install
