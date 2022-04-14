@@ -1,7 +1,7 @@
 <template lang="">
     <header>
         <h1> {{title}} </h1>
-        <Button @toggle-add-task="$emit('toggle-add-task')" text="Add Task" color="green" />
+        <Button @btn-click="$emit('toggle-add-task')" :text="showAddTask ? 'Close' : 'Add Task'" :color="showAddTask ? 'red' : 'green'" />
     </header>
 </template>
 <script>
@@ -11,7 +11,8 @@ export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name: "Header",
     props: {
-        title: String
+        title: String,
+        showAddTask: Boolean,
     },
     components: {
         Button,

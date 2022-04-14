@@ -8,10 +8,11 @@ export default {
     props: {
         text: String,
         color: String,
+
     },
     methods: {
         onClick() {
-            this.$emit('toggle-add-task')
+            this.$emit('btn-click')
         }
     }
 }
