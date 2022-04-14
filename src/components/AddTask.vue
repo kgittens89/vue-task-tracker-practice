@@ -13,7 +13,7 @@
             <label>Set Reminder</label>
             <input type="checkbox" v-model="reminder" name="reminder" />
         </div>
-        <input tyepe="submit" value="Save Task" class="btn btn-block" />
+        <input type="submit" value="Save Task" class="btn btn-block" />
     </form>
 </template>
 <script>
@@ -27,6 +27,7 @@ export default {
             day: '',
             reminder: false,
             uuid: uuid.v1(), 
+            i: 1,
         }
     },
     methods: {
@@ -44,11 +45,13 @@ export default {
                 reminder: this.reminder
             }
 
-            console.log(newTask)
+            this.$emit('add-task', newTask)
 
             this.text = ''
             this.day = ''
             this.reminder = false
+            this.i += 1
+            this.uuid = 'uuid.v' + this.i + '()'
         }
     }
 }
